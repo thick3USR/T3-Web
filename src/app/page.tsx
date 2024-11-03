@@ -1,3 +1,7 @@
+import { headers } from 'next/headers'
+
 export default function Home() {
-  return <div>T3-Web</div>
+  const subDomain = headers().get('x-subdomain') || ''
+
+  return <div>{subDomain}</div>
 }
